@@ -41,7 +41,7 @@ struct BaseN{
         BaseN ret(base,num+other.num);
         return ret;
     }
-    BaseN operator+(const int &other){
+    BaseN operator+(const ll &other){
         BaseN ret(base,num+other);
         return ret;
     }
@@ -49,8 +49,32 @@ struct BaseN{
         BaseN ret(base,num-other.num);
         return ret;
     }
-    BaseN operator-(const int &other){
+    BaseN operator-(const ll &other){
         BaseN ret(base,num+other);
+        return ret;
+    }
+    BaseN operator*(const BaseN &other){
+        BaseN ret(base,num*other.num);
+        return ret;
+    }
+    BaseN operator*(const ll &other){
+        BaseN ret(base,num*other);
+        return ret;
+    }
+    BaseN operator/(const BaseN &other){
+        if(other.num==0){
+            cerr<<"Error: division by zero"<<endl;
+            exit(1);
+        }
+        BaseN ret(base,num/other.num);
+        return ret;
+    }
+    BaseN operator/(const ll &other){
+        if(other==0){
+            cerr<<"Error: division by zero"<<endl;
+            exit(1);
+        }
+        BaseN ret(base,num/other);
         return ret;
     }
     void operator++(){
