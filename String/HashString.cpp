@@ -7,10 +7,10 @@ struct HashString{
     string s;
     vector<ll> p1,p2,ip1,ip2;
     vector<pair<ll,ll>> h,rh;
-    constexpr ll mod1=998244353;
-    constexpr ll mod2=79020979;
-    constexpr ll R1=2092427;
-    constexpr ll R2=870083;
+    ll mod1=998244353;
+    ll mod2=79020979;
+    ll R1=2092427;
+    ll R2=870083;
     ll modpow(ll x, int n, ll M){
         ll res = 1;
         while(n){
