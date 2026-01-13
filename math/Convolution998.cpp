@@ -52,7 +52,7 @@ vector<mint> IDFT(vector<mint> B){
     int N=B.size();
     if(N==1){
         return B;
-    }else if(N<=32){
+    }else if(N<=16){
         vector<mint> A(N);
         mint g=mint(base_root).pow((mod-1)/N);
         g=g.inv();
