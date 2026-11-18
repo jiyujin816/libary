@@ -1,5 +1,6 @@
 //https://github.com/jiyujin816/libary
-https://github.com/jiyujin816/libary/blob/main/template.cpp
+//https://github.com/jiyujin816/libary/blob/main/template.cpp
+
 //#define _GLIBCXX_DEBUG
 #include <bits/stdc++.h>
 #include <atcoder/all>
