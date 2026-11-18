@@ -2,8 +2,8 @@
 //#define _GLIBCXX_DEBUG
 #include <bits/stdc++.h>
 #include <atcoder/all>
-//多倍長整数
-/*
+
+
 #include <boost/multiprecision/cpp_dec_float.hpp>
 #include <boost/multiprecision/cpp_int.hpp>
 namespace mp = boost::multiprecision;
@@ -12,7 +12,7 @@ namespace mp = boost::multiprecision;
 using Bint = mp::cpp_int;
  //仮数部が10進数で1024桁の浮動小数点数型(TLEしたら小さくする)
 using Real = mp::number<mp::cpp_dec_float<1024>>;
-*/
+
 using namespace std;
 using namespace atcoder;
 using ll=long long;
@@ -24,7 +24,7 @@ using mint2=modint1000000007;
 using mint3=static_modint<1000000000>;
 //using P=pair<ll,ll>;
 using pll=pair<ll,ll>;
-constexpr ll INF=1e17; 
+constexpr ll INF=4e18; 
 const vector<ll> dx={0,0,1,-1,1,1,-1,-1};
 const vector<ll> dy={1,-1,0,0,1,-1,-1,1};
 const vector<char> dirs={'>','<','v','^'};
@@ -36,6 +36,14 @@ const vector<char> dirs={'>','<','v','^'};
 #define rep(...) overload4(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
+template <int M>
+ostream& operator<<(ostream &os, const atcoder::static_modint<M> &x){
+    return os<<x.val();
+}
+template <int M>
+ostream& operator<<(ostream &os, const atcoder::dynamic_modint<M> &x){
+    return os<<x.val();
+}
 template <typename T1,typename T2>
 ostream& operator<<(ostream &os,pair<T1,T2> &pai){
     return os<<"("<<pai.first<<","<<pai.second<<") ";
@@ -82,17 +90,19 @@ template<typename T> void print2(const vector<vector<T>> &vec){
         cout<<'\n';
     }
 }
-template<class T> void chmin(T &a,T b){
+template<typename T> bool chmin(T &a,T b){
     if(a>b){
         a=b;
+        return true;
     }
-    return;
+    return false;
 }
-template<class T> void chmax(T &a,T b){
+template<typename T> bool chmax(T &a,T b){
     if(a<b){
         a=b;
+        return true;
     }
-    return;
+    return false;
 }
 template<typename T,typename S>
 T floor_div(T a,S b){
@@ -100,7 +110,6 @@ T floor_div(T a,S b){
     if(a>=0)return a/b;
     return(a-b+1)/b;
 }
-
 template<typename T,typename S>
 T ceil_div(T a,S b){
     if(b<0){a=-a;b=-b;}
@@ -144,14 +153,22 @@ bool is_in(ll x,ll y,ll h,ll w){
 }
 struct ob3{
     ll a,b,c;
-    auto operator<=>(const ob3&) const = default;
+    // auto operator<=>(const ob3&) const = default;
 };
 struct ob4{
     ll a,b,c,d;
-    friend auto operator<=>(const ob4&,const ob4&)=default;
+    // auto operator<=>(const ob4&) const = default;
 };
+
+void solve(){
+    
+}
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    
+    int T=1;
+    //cin>>T;
+    while(T--){
+        solve();
+    }
 }
